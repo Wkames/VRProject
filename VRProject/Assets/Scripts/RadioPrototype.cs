@@ -57,11 +57,11 @@ public class RadioPrototype : SingletonComponent<RadioPrototype> {
 
 		sub += 3f;
 		yield return new WaitForSeconds(3f);
-		FadeMusicTo(0.1f, 0.5f);
+		//FadeMusicTo(0.1f, 0.5f);
 		yield return new WaitForSeconds(0.5f);
-		voicePlayer.PlayOneShot(0);
+		//voicePlayer.PlayOneShot(0);
 		yield return new WaitForSeconds(totalSec - sub);
-		FadeMusicTo(1f, 0.5f);
+		//FadeMusicTo(1f, 0.5f);
 
 		narrativeIsPlaying = false;
 	}
@@ -83,11 +83,11 @@ public class RadioPrototype : SingletonComponent<RadioPrototype> {
 		if (narrativeIsPlaying)
 			yield break;
 
-		FadeMusicTo(0.1f, 0.5f);
+		//FadeMusicTo(0.1f, 0.5f);
 		yield return new WaitForSeconds(0.5f);
-		Instance.voicePlayer.PlayOneShot(clip, volume);
+		//Instance.voicePlayer.PlayOneShot(clip, volume);
 		yield return new WaitForSeconds(clip.length);
-		FadeMusicTo(1f, 0.5f);
+		//FadeMusicTo(1f, 0.5f);
 	}
 
 	public static void PlayRemark(AudioClip clip, float volume = 1) {
