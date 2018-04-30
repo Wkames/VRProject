@@ -11,11 +11,14 @@ public class HeartSummoner : Interaction {
     public GameObject darkhole;
     private static int skullCount;
     private static Vector3 darkhole_scale;
+    private static Vector3 heart_pos;
 
     // Use this for initialization
     void Start () {
         skullCount = 0;
         darkhole_scale = darkhole.transform.localScale;
+        heart_pos = heart.transform.position;
+        LeanTween.move(heart.gameObject, new Vector3(heart.transform.position.x, -1, heart.transform.position.z), 2f).setEase(LeanTweenType.easeOutSine);
         LeanTween.scale(darkhole.gameObject, new Vector3(0, 0, 0), 2f).setEase(LeanTweenType.easeOutSine);
     }
 
@@ -42,8 +45,8 @@ public class HeartSummoner : Interaction {
         {
             darkhole.SetActive(true);
             LeanTween.scale(darkhole.gameObject, darkhole_scale, 2f).setEase(LeanTweenType.easeOutSine);
-            yield return new WaitForSeconds(3f);
-            heart.SetActive(true);
+            yield return new WaitForSeconds(1.5f);
+            LeanTween.move(heart.gameObject, heart_pos, 2f).setEase(LeanTweenType.easeOutSine);
         }
         
         
