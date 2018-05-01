@@ -34,6 +34,7 @@ public class PlayAnimationOnInteract : Interaction
         yield return new WaitForSeconds(25f);
 
         anim.Stop();
+        target_animated.SetActive(false);
 
         target_end.SetActive(true);
 

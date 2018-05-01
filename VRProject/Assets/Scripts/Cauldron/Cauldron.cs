@@ -151,7 +151,11 @@ public class Cauldron : InteractiveObject {
 
 	public void Add(ObtainableItem item) {
 		var recipeItem = recipe.items.Find(i => HName.GetPure(i.itemName) == HName.GetPure(item.name));
-
+        /*Debug.Log(HName.GetPure(item.name));
+        for (int i = 0; i < recipe.items.Count; i++)
+        {
+            Debug.Log(HName.GetPure(recipe.items[i].itemName));
+        }*/
 		if (recipeItem != null) {
 			StartCoroutine(AddItemCo(item, recipeItem));
 		} else {

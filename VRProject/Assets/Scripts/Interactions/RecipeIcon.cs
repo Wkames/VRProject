@@ -34,7 +34,7 @@ public class RecipeIcon : Interaction {
 		isHoverd = true;
 		startedHoveredTime = Time.time;
 		LeanTween.cancel(gameObject);
-		LeanTween.moveLocal(gameObject, transform.forward * 0.025f, 0.25f).setEase(LeanTweenType.easeInOutCubic);
+		LeanTween.moveLocal(gameObject, transform.forward * 0.005f, 0.25f).setEase(LeanTweenType.easeInOutCubic);
 		//var rotationTowarsVisitor = Quaternion.LookRotation(King.visitor.sight.anchor.position - transform.position);
 		//LeanTween.rotate(gameObject, rotationTowarsVisitor.eulerAngles, 0.5f).setEase(LeanTweenType.easeInOutCubic);
 		yield return new WaitForSeconds(0.25f);
